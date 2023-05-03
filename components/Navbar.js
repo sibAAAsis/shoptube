@@ -1,64 +1,37 @@
 import React from "react";
-import { RiAccountCircleFill } from "react-icons/ri";
+import { RiAccountCircleLine } from "react-icons/ri";
 import { RiTShirt2Fill } from "react-icons/ri";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import Link from "next/link";
+import { Button } from "@mui/material";
+import { IconButton } from "@mui/material";
 // import RiAccountCircleLine from  "react-icons/ri";
-function Navbar() {
+function Navbar(cart) {
   return (
     <div>
-      <nav className="text-gray-600 body-font">
+      <nav className="text-white body-font bg-blue-500 ">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          
-        <Link href="/"><a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <RiTShirt2Fill />ShopTube
-
-            {/* >
-                */}
-             
-                
-            
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg> */}
-            
-          </a></Link>
+        <Link legacyBehavior href="/"><a className="flex title-font font-medium items-center text-2xl text-white mb-4 md:mb-0"><RiTShirt2Fill />ShopTube</a></Link>
           <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 cursor-pointer hover:text-gray-900">Home</a>
-            <a className="mr-5 cursor-pointer hover:text-gray-900">Products</a>
-            <a className="mr-5 cursor-pointer hover:text-gray-900">About Us</a>
-            <a className="mr-5 cursor-pointer hover:text-gray-900">
-              More &darr;
-            </a>
-
+            <Link legacyBehavior href="/"><Button  className="text-white">Home</Button></Link>
+            <Link legacyBehavior href="/products/"><Button  className="text-white">products</Button></Link>
+            <Link legacyBehavior href="about"><Button  className="text-white">about us</Button></Link>
+            <Link legacyBehavior href="/contact"><Button  className="text-white">contact us</Button></Link>
+            <Link legacyBehavior href="/"><Button  className="text-white">More &darr;</Button></Link>
            
           </nav>
-          <button className="inline-flex items-center bg-gray-100  py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            <RiAccountCircleFill />
-            {/* <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg> */}
-          </button>
+          {/* <button className="inline-flex items-center  py-1 px-3 focus:outline-none hover:animate-bounce   hover:text-black rounded-full text-2xl mt-4 md:mt-0"><RiAccountCircleFill />
+          </button> */}
+          <Link legacyBehavior href="/cart"><IconButton aria-label="delete" size="large"><AiOutlineShoppingCart className="text-white" /><span className="">{Object.keys(cart).length}</span></IconButton></Link>
+          <Link legacyBehavior href="/login"><IconButton aria-label="delete" size="large"><RiAccountCircleLine className="text-white" /></IconButton></Link>
         </div>
+        
       </nav>
     </div>
   );
 }
 
 export default Navbar;
+
+
+// sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent
