@@ -22,6 +22,7 @@ export default function Home({ products,addToCart,slug }) {
         <div className="min-h-screen bg-gray-100 flex flex-col justify-center">
           <div className="relative m-3 flex flex-wrap justify-center">
             {Object.keys(products).map((item) => {
+              console.log(typeof(products[item]))
               return (
                 <div
                   key={products[item]._id}

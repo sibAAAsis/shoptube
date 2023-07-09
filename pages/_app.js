@@ -77,7 +77,10 @@ const saveCart = (myCart)=>{
   };
   cors.apply(cors(corsOptions));
   return <>
-  <Head><title>ShopTube</title><link rel="icon" href="/next.svg" /></Head>
+  <Head><title>ShopTube</title><link rel="icon" href="/next.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8651032257595693"
+     crossorigin="anonymous"></script>
+  </Head>
   <Navbar key={subTotal} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal}/>
   <Component buyNow={buyNow} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} /><Footer/></>
 }
