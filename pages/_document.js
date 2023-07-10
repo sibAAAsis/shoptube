@@ -18,7 +18,7 @@ export default function Document() {
     data-ad-format="auto"
     data-full-width-responsive="true"
   />
-  <Script>
+  <Script id="my-script">
      (adsbygoogle = window.adsbygoogle || []).push({});
 </Script>
       </body>
